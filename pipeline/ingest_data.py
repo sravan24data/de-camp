@@ -6,6 +6,15 @@ import pandas as pd
 from sqlalchemy import create_engine
 from tqdm.auto import tqdm
 
+from sqlalchemy import create_engine
+import pandas as pd
+
+url = "https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
+zones_df = pd.read_csv(url)
+
+engine = create_engine("postgresql://root:root@pgdatabase:5432/ny_taxi")
+zones_df.to_sql(name="zones", con=engine, if_exists="replace")
+
 dtype = {
     "VendorID": "Int64",
     "passenger_count": "Int64",
@@ -75,3 +84,5 @@ def run(pg_user, pg_pass, pg_host, pg_port, pg_db, year, month, target_table, ch
 
 if __name__ == '__main__':
     run()
+
+
