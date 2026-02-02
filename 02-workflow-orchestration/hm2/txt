@@ -1,0 +1,8 @@
+https://github.com/DataTalksClub/nyc-tlc-data/releases/tag/green/download   then check the  size ls -lh yellow_tripdata_2020-12.csv or from the website it shows 1.4mb
+green_tripdata_2020-04.csv
+SELECT COUNT(*) FROM yellow_taxi_2020;
+SELECT COUNT(*) FROM green_taxi_2020;
+wc -l yellow_tripdata_2021-03.csv
+timezone: America/New_York
+
+/* Modify provided postgres file add the 2021 data to the original
