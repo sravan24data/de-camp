@@ -1,0 +1,32 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: nyc_taxi
+    database: de-camp-expert
+    schema: ny_taxi
+    tables:
+      - name: fhv_tripdata_2019
+      - name: green_tripdata_2019
+      - name: yellow_tripdata_2019
+      - name: stg_fhv_tripdata
+
+
